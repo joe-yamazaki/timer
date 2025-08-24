@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>タイマー</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  </head>
+  <body>
+    <main class="app">
+      <h1 class="title">タイマー</h1>
+
+      <section class="ring-wrap">
+        <div class="ring" id="ring" aria-hidden="true"></div>
+        <div class="time" id="time" aria-live="polite">00:00</div>
+      </section>
+
+      <section class="controls">
+        <div class="set-row">
+          <label class="sr-only" for="timeInput">時間を mm:ss で入力</label>
+          <input id="timeInput" class="time-input" inputmode="numeric" placeholder="25:00" value="25:00" aria-label="開始時間 (mm:ss)" />
+          <button id="applyBtn" class="btn">設定</button>
+          <div class="quick">
+            <button class="btn btn-ghost" data-set="00:30">+30s</button>
+            <button class="btn btn-ghost" data-set="01:00">+1m</button>
+            <button class="btn btn-ghost" data-set="05:00">+5m</button>
+          </div>
+        </div>
+
+        <div class="main-row">
+          <button id="startPauseBtn" class="btn btn-primary">開始</button>
+          <button id="resetBtn" class="btn">リセット</button>
+          <button id="stopBtn" class="btn btn-danger">停止</button>
+        </div>
+
+        <p class="hint">Space: 開始/一時停止, R: リセット</p>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+  </html>
